@@ -1,5 +1,8 @@
 <?php
-
+//Get the images from database
+include 'images.php';
+$imgurl = "http://homesale.app/pics/";
+$thumburl = "http://homesale.app/pics/thumbnails/";
 ?>
 <html>
 	<head>
@@ -19,8 +22,16 @@
 	<body>
 		<div id="page">
 			<div id="container">
-				<h1>View The Home Pictures</h1>
-				<h2>Click the thumbnails to see enlarged pictures</h2>
+				<h1>Welcome To OurHomeSale.co.uk</h1>
+                <h2>Featured Property</h2>
+                <p>This family three bedroom 1930's Bay fronted end of terrace property is
+                    ideally located for access to Rochester, Chatham and the Motorway network.
+                    <p>
+                    Refurbished with a newly fitted kitchen and bathroom suit.
+                    Benefiting from new gas central heating, double-glazing with a good-sized 60ft
+                    rear garden. No onward chain.
+                   It is within walking distance of Chatham mainline train station and town centre.</p>
+				<h4>Click the thumbnails to see enlarged pictures (More pictures to be posted soon)</h4>
 
 				<!-- Start Advanced Gallery Html Containers -->
 				<div id="gallery" class="content">
@@ -33,317 +44,72 @@
 				</div>
 				<div id="thumbs" class="navigation">
 					<ul class="thumbs noscript">
+                        <?php
+                        foreach($result as $key => $value){  ?>
 						<li>
-							<a class="thumb" name="leaf" href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg" title="Title #0">
-								<img src="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_s.jpg" alt="Title #0" />
+							<a class="thumb" name="leaf" href="<?php echo $imgurl . $value['file_name']; ?>" title="<?php echo $value['title']; ?>">
+								<img src="<?php echo $thumburl . $value['thumb_url']; ?>" alt="<?php echo $value['title']; ?>" />
 							</a>
 							<div class="caption">
-								<div class="download">
-									<a href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #0</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
 
-						<li>
-							<a class="thumb" name="drop" href="http://farm3.static.flickr.com/2404/2538171134_2f77bc00d9.jpg" title="Title #1">
-								<img src="http://farm3.static.flickr.com/2404/2538171134_2f77bc00d9_s.jpg" alt="Title #1" />
-							</a>
-							<div class="caption">
-								Any Text Can be placed here
+								<div class="image-title"><?php echo $value['title']; ?></div>
+								<div class="image-desc"><?php echo $value['description']; ?></div>
 							</div>
 						</li>
+                    <?php } ?>
 
-						<li>
-							<a class="thumb" name="bigleaf" href="http://farm3.static.flickr.com/2093/2538168854_f75e408156.jpg" title="Title #2">
-								<img src="http://farm3.static.flickr.com/2093/2538168854_f75e408156_s.jpg" alt="Title #2" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm3.static.flickr.com/2093/2538168854_f75e408156_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #2</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" name="lizard" href="http://farm4.static.flickr.com/3153/2538167690_c812461b7b.jpg" title="Title #3">
-								<img src="http://farm4.static.flickr.com/3153/2538167690_c812461b7b_s.jpg" alt="Title #3" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm4.static.flickr.com/3153/2538167690_c812461b7b_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #3</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm4.static.flickr.com/3150/2538167224_0a6075dd18.jpg" title="Title #4">
-								<img src="http://farm4.static.flickr.com/3150/2538167224_0a6075dd18_s.jpg" alt="Title #4" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm4.static.flickr.com/3150/2538167224_0a6075dd18_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #4</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm4.static.flickr.com/3204/2537348699_bfd38bd9fd.jpg" title="Title #5">
-								<img src="http://farm4.static.flickr.com/3204/2537348699_bfd38bd9fd_s.jpg" alt="Title #5" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm4.static.flickr.com/3204/2537348699_bfd38bd9fd_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #5</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm4.static.flickr.com/3124/2538164582_b9d18f9d1b.jpg" title="Title #6">
-								<img src="http://farm4.static.flickr.com/3124/2538164582_b9d18f9d1b_s.jpg" alt="Title #6" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm4.static.flickr.com/3124/2538164582_b9d18f9d1b_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #6</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm4.static.flickr.com/3205/2538164270_4369bbdd23.jpg" title="Title #7">
-								<img src="http://farm4.static.flickr.com/3205/2538164270_4369bbdd23_s.jpg" alt="Title #7" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm4.static.flickr.com/3205/2538164270_c7d1646ecf_o.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #7</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm4.static.flickr.com/3211/2538163540_c2026243d2.jpg" title="Title #8">
-								<img src="http://farm4.static.flickr.com/3211/2538163540_c2026243d2_s.jpg" alt="Title #8" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm4.static.flickr.com/3211/2538163540_c2026243d2_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #8</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm3.static.flickr.com/2315/2537343449_f933be8036.jpg" title="Title #9">
-								<img src="http://farm3.static.flickr.com/2315/2537343449_f933be8036_s.jpg" alt="Title #9" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm3.static.flickr.com/2315/2537343449_f933be8036_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #9</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm3.static.flickr.com/2167/2082738157_436d1eb280.jpg" title="Title #10">
-								<img src="http://farm3.static.flickr.com/2167/2082738157_436d1eb280_s.jpg" alt="Title #10" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm3.static.flickr.com/2167/2082738157_436d1eb280_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #10</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm3.static.flickr.com/2342/2083508720_fa906f685e.jpg" title="Title #11">
-								<img src="http://farm3.static.flickr.com/2342/2083508720_fa906f685e_s.jpg" alt="Title #11" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm3.static.flickr.com/2342/2083508720_fa906f685e_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #11</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm3.static.flickr.com/2132/2082721339_4b06f6abba.jpg" title="Title #12">
-								<img src="http://farm3.static.flickr.com/2132/2082721339_4b06f6abba_s.jpg" alt="Title #12" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm3.static.flickr.com/2132/2082721339_4b06f6abba_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #12</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm3.static.flickr.com/2139/2083503622_5b17f16a60.jpg" title="Title #13">
-								<img src="http://farm3.static.flickr.com/2139/2083503622_5b17f16a60_s.jpg" alt="Title #13" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm3.static.flickr.com/2139/2083503622_5b17f16a60_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #13</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm3.static.flickr.com/2041/2083498578_114e117aab.jpg" title="Title #14">
-								<img src="http://farm3.static.flickr.com/2041/2083498578_114e117aab_s.jpg" alt="Title #14" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm3.static.flickr.com/2041/2083498578_114e117aab_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #14</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm3.static.flickr.com/2149/2082705341_afcdda0663.jpg" title="Title #15">
-								<img src="http://farm3.static.flickr.com/2149/2082705341_afcdda0663_s.jpg" alt="Title #15" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm3.static.flickr.com/2149/2082705341_afcdda0663_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #15</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm3.static.flickr.com/2014/2083478274_26775114dc.jpg" title="Title #16">
-								<img src="http://farm3.static.flickr.com/2014/2083478274_26775114dc_s.jpg" alt="Title #16" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm3.static.flickr.com/2014/2083478274_26775114dc_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #16</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm3.static.flickr.com/2194/2083464534_122e849241.jpg" title="Title #17">
-								<img src="http://farm3.static.flickr.com/2194/2083464534_122e849241_s.jpg" alt="Title #17" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm3.static.flickr.com/2194/2083464534_122e849241_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #17</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm4.static.flickr.com/3127/2538173236_b704e7622e.jpg" title="Title #18">
-								<img src="http://farm4.static.flickr.com/3127/2538173236_b704e7622e_s.jpg" alt="Title #18" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm4.static.flickr.com/3127/2538173236_b704e7622e_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #18</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm3.static.flickr.com/2375/2538172432_3343a47341.jpg" title="Title #19">
-								<img src="http://farm3.static.flickr.com/2375/2538172432_3343a47341_s.jpg" alt="Title #19" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm3.static.flickr.com/2375/2538172432_3343a47341_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #19</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm3.static.flickr.com/2353/2083476642_d00372b96f.jpg" title="Title #20">
-								<img src="http://farm3.static.flickr.com/2353/2083476642_d00372b96f_s.jpg" alt="Title #20" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm3.static.flickr.com/2353/2083476642_d00372b96f_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #20</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm3.static.flickr.com/2201/1502907190_7b4a2a0e34.jpg" title="Title #21">
-								<img src="http://farm3.static.flickr.com/2201/1502907190_7b4a2a0e34_s.jpg" alt="Title #21" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm3.static.flickr.com/2201/1502907190_7b4a2a0e34_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #21</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm2.static.flickr.com/1116/1380178473_fc640e097a.jpg" title="Title #22">
-								<img src="http://farm2.static.flickr.com/1116/1380178473_fc640e097a_s.jpg" alt="Title #22" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm2.static.flickr.com/1116/1380178473_fc640e097a_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #22</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
-
-						<li>
-							<a class="thumb" href="http://farm2.static.flickr.com/1260/930424599_e75865c0d6.jpg" title="Title #23">
-								<img src="http://farm2.static.flickr.com/1260/930424599_e75865c0d6_s.jpg" alt="Title #23" />
-							</a>
-							<div class="caption">
-								<div class="download">
-									<a href="http://farm2.static.flickr.com/1260/930424599_e75865c0d6_b.jpg">Download Original</a>
-								</div>
-								<div class="image-title">Title #23</div>
-								<div class="image-desc">Description</div>
-							</div>
-						</li>
 					</ul>
 				</div>
 				<!-- End Advanced Gallery Html Containers -->
 				<div style="clear: both;"></div>
+                <div>
+                    <h2>Ground Floor</h2>
+                    <p><span class="bold">ENTRANCE PORCH:</span>Hardwood entrance door. With double glazed side
+                    panels</p>
+
+                    <p><span class="bold">ENTRANCE HALL: </span>Radiator, under stairs storage cupboard housing meters.
+                    Stairs to first floor.</p>
+
+                    <p><span class="bold">LOUNGE: </span>14'1" x 11'4" (4.29m x 3.45m), Double glazed window to front,
+                    radiator</p>
+
+                    <p><span class="bold">DINING ROOM:</span> 14'0" x 9'6" (4.27m x 2.90m), patio doors leading to garden
+                    radiator.</p>
+
+                    <p><span class="bold">KITCHEN: </span>8'2" x 6'9" (2.49m x 2.06m), Double glazed door and side window.
+                    Range of new wall and base units with easy wipe down work surfaces, single
+                    drainer sink with mixer tap, space for slim line dishwasher, space for fridge,
+                    space for washing machine.</p>
+
+                    <h2>FIRST FLOOR</h2>
+
+                    <p><span class="bold">LANDING:</span> Loft access.</p>
+
+                    <p><span class="bold">BEDROOM 1: </span>13'6" x 10'5" (4.11m x 3.18m), into bay. Double-glazed bay
+                    window to front, built in wardrobes, radiator.</p>
+
+                    <p><span class="bold">BEDROOM 2:</span> 11'2" x 10'5" (3.40m x 3.18m), Window to rear, radiator, built in
+                    wardrobes which houses boiler and airing cupboard.</p>
+
+                    <p><span class="bold">BEDROOM 3:</span> 6'9" x 6'3" (2.06m x 1.91m), Double-glazed window to front,
+                    radiator.</p>
+
+                    <p><span class="bold">BATHROOM:</span> Double-glazed frosted window to rear, panelled bath, low-level
+                    WC, wash hand basin and vanity unit, radiator.</p>
+
+                    <h2>OUTSIDE</h2>
+
+                    <p><span class="bold"> FRONT GARDEN:</span> New off road parking</p>
+
+                    <p><span class="bold">REAR GARDEN:</span> Side access into gated alleyway, shed to remain, 60ft long
+                    garden, mainly patio with fruit tree, fir tree shrubs and flowers.</p>
+
+                    <p><span class="bold">VIEWINGS:</span> Strictly by appointment. Please call <span class="bold">01634 844230</span> or mobile
+                        <span class="bold">07758343971[best] </span> Email <a href="mailto:hadlum@hotmail.com">hadlum@hotmail.com</a> </p>
+                    <p class="small">These particulars are for general guidance only. We have not carried out a detailed survey, nor tested the appliances,
+                        services and fittings. Room sizes should not be relied upon for carpets and furniture. Prospective purchasers are
+                        responsible to confirm accuracy by inspection.</p>
+                </div>
 			</div>
 		</div>
 		<div id="footer"></div>

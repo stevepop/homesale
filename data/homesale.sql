@@ -5,9 +5,9 @@
 # http://www.sequelpro.com/
 # http://code.google.com/p/sequel-pro/
 #
-# Host: 192.168.56.2 (MySQL 5.5.29-0ubuntu0.12.04.1)
+# Host: 192.168.1.8 (MySQL 5.5.29-0ubuntu0.12.04.2)
 # Database: homesale
-# Generation Time: 2013-03-07 17:17:31 +0000
+# Generation Time: 2013-03-07 21:48:39 +0000
 # ************************************************************
 
 
@@ -27,6 +27,7 @@ DROP TABLE IF EXISTS `images`;
 
 CREATE TABLE `images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(80) DEFAULT NULL,
   `description` text,
   `file_name` varchar(100) NOT NULL DEFAULT '',
   `thumb_url` varchar(100) NOT NULL,
@@ -36,10 +37,21 @@ CREATE TABLE `images` (
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
 
-INSERT INTO `images` (`id`, `description`, `file_name`, `thumb_url`)
+INSERT INTO `images` (`id`, `title`, `description`, `file_name`, `thumb_url`)
 VALUES
-	(1,'Front View of the house','front_up.jpg','front_up_tn.jpg'),
-	(2,'Back View of the house','back_view1.jpg','back_view1_tn.jpg');
+	(3,'Back View','Back View of the house 1','back_view1.jpg','back_view1_tn.jpg'),
+	(4,'Back View','Back View of the house 2','back_view2.jpg','back_view2_tn.jpg'),
+	(5,'Back View','Back View of the house 3','back_view2.jpg','back_view3_tn.jpg'),
+	(6,'Front View','Front Upper View of the house 1','front_up.jpg','front_up_tn.jpg'),
+	(7,'Upper Room View','Front Upper View of the house 1','front_view1.jpg','front_view1_tn.jpg'),
+	(8,'Upper Room View 2','Front Upper View of the house 2','front_view2.jpg','front_view2_tn.jpg'),
+	(9,'Front Bedroom','Main front bedroom','main_front_bed.jpg','main_front_bed_tn.jpg'),
+	(10,'Wardrobes','Middle bedroom wardrobes','mid_bed_wardrobes.jpg','mid_bed_wardrobes_tn.jpg'),
+	(11,'Features','Original Features','original_features.jpg','original_features_tn.jpg'),
+	(12,'Bath Shower','Shower','shower.jpg','shower_tn.jpg'),
+	(13,'Bath Shower','Shower Bathrooom','shower_bath_room.jpg','shower_bath_room_tn.jpg'),
+	(14,'Staircase','Staircase','staircase.jpg','staircase_tn.jpg'),
+	(15,'Middle Bedroom','View from middle bedroom','view_from_mid_bed.jpg','view_from_mid_bed_tn.jpg');
 
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
