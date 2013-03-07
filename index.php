@@ -1,8 +1,10 @@
 <?php
 //Get the images from database
 include 'images.php';
-$imgurl = "http://homesale.app/pics/";
-$thumburl = "http://homesale.app/pics/thumbnails/";
+$protocol = 'http://';
+$imgurl = $protocol . $_SERVER['SERVER_NAME'] . "/pics/";
+$thumburl = $protocol . $_SERVER['SERVER_NAME'] .  "/pics/thumbnails/";
+
 ?>
 <html>
 	<head>
