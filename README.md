@@ -1,0 +1,1 @@
+Simple jQuery Photo Album using PHP amd Mysql

@@ -1,0 +1,20 @@
+server {
+listen 80;
+    server_name homesale.me;
+    root /mnt/hostnfs/homesale;
+    index index.html index.php;
+
+    location ~ \.php$ {
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_index index.php;
+        include fastcgi_params;
+    }
+
+    location / {
+        if (-f $request_filename) {
+            expires max;
+            break;
+        }
+        rewrite ^(.*) /index.php last;
+    }
+}
