@@ -76,6 +76,7 @@ $thumburl = $protocol . $_SERVER['SERVER_NAME'] .  "/pics/thumbnails/";
                         <li>New bath & shower</li>
                         <li>NO CHAIN</li>
                     </ul>
+                    <p class="bold">Price: £155,000 to 165,000</p>
 
                     <h2>Ground Floor</h2>
                     <p><span class="bold">ENTRANCE PORCH:</span>Hardwood entrance door. With double glazed side
