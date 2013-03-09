@@ -26,6 +26,7 @@ $thumburl = $protocol . $_SERVER['SERVER_NAME'] .  "/pics/thumbnails/";
 			<div id="container">
 				<h1>Welcome To OurHomeSale.co.uk</h1>
                 <h2>Featured Property</h2>
+                <header>Full Description</header>
                 <p>This family three bedroom 1930's Bay fronted end of terrace property is
                     ideally located for access to Rochester, Chatham and the Motorway network.
                     <p>
@@ -65,6 +66,17 @@ $thumburl = $protocol . $_SERVER['SERVER_NAME'] .  "/pics/thumbnails/";
 				<!-- End Advanced Gallery Html Containers -->
 				<div style="clear: both;"></div>
                 <div>
+                <h2>Key Features</h2>
+                    <ul>
+                        <li>Extremely sought after area with good bus and rail links & schools</li>
+                        <li>Brand new off-road parking to front</li>
+                        <li>Central heating system Worcester/Bosch Greenstar 30 SI combination
+                            condensing boiler</li>
+                        <li>Refurbished kitchen including new floor and mains water pipe</li>
+                        <li>New bath & shower</li>
+                        <li>NO CHAIN</li>
+                    </ul>
+
                     <h2>Ground Floor</h2>
                     <p><span class="bold">ENTRANCE PORCH:</span>Hardwood entrance door. With double glazed side
                     panels</p>
